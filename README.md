@@ -7,6 +7,7 @@
 * A JavaScript library for building user interfaces - [React Official Website](https://reactjs.org)
 * A client-side JavaScript library
 * All about building modern, reative user interfaces for the web
+* Declarative, component-focused approach
 
 ## BurgerBuilder-eclipse-VertX
 

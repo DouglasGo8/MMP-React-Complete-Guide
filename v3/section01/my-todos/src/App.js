@@ -7,7 +7,8 @@ import Todo from "./components/Todo";
 const app = () => {
   return (
     <Fragment>
-      <Todo />
+      <h1>My Todos</h1>
+      <Todo text="React.js Rocks" />
     </Fragment>
   );
 };
