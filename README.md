@@ -1,19 +1,20 @@
-# BurgerBuilder-eclipse-VertX
+# React - The Complete Guide (incl Hooks, React Router, Redux)
+
+---
+
+## What is React
+
+* A JavaScript library for building user interfaces - [React Official Website](https://reactjs.org)
+* A client-side JavaScript library
+* All about building modern, reative user interfaces for the web
+
+## BurgerBuilder-eclipse-VertX
 
 Add instructions for project developers here.
 
-will use npm i --save axios
-will use Eclipse VertX with MongoDB in Docker
-
-
-
-<https://www.freecodecamp.org/news/how-to-use-reactjs-with-webpack-4-babel-7-and-material-design-ff754586f618/ >
-
-
-<https://jsonplaceholder.typicode.com/posts />
-
-
 ## Order Payload
+
+```json
 {
     "orderId": "123",
     "orderDate": "2019-08-06T16:22:33",
@@ -32,11 +33,11 @@ will use Eclipse VertX with MongoDB in Docker
         "meat": 1
     }
 }
-
+```
 
 ## Insert Ingredients
 
-```html
+```javascript
 db.getCollection("IngredientsCollection").insertOne({
 salad: 0,
 meat: 0,
