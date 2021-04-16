@@ -1,0 +1,23 @@
+version: "3"
+services:
+  mongodb-burger:
+    restart: always
+    image: mongo
+    container_name: "mongodb-burger"
+    environment:
+      - MONGO_INITDB_DATABASE=burger-builder-db
+      - MONGO_INITDB_ROOT_USERNAME=guest
+      - MONGO_INITDB_ROOT_PASSWORD=welcome1
+    volumes:
+      - mongodb:/data/db
+    ports:
+      - 27017:27017
+    networks:
+      - mongo_net
+
+volumes:
+  mongodb:
+
+networks:
+  mongo_net:
+    driver: bridge

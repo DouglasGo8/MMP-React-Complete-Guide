@@ -1,0 +1,10 @@
+<project name="BurgerBuilder-eclipse-VertX">
+    <skin>
+        <groupId>org.apache.maven.skins</groupId>
+        <artifactId>maven-fluido-skin</artifactId>
+        <version>1.5</version>
+    </skin>
+    <body>
+        <menu ref="reports"/>
+    </body>
+</project>
