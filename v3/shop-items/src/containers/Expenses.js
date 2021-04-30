@@ -22,7 +22,7 @@ const expenses = ({ expenses }) => (
           date={exp.date}
         />
       );
-    })}
+    })} 
   </Card>
 );
 
