@@ -3,6 +3,7 @@ import React from "react";
 import "./App.css";
 
 import Expenses from "./containers/Expenses";
+import NewExpense from "./components/NewExpense/NewExpense";
 /**
  *
  * @returns
@@ -35,8 +36,13 @@ const app = () => {
     },
   ];
 
+  const addExpenseHandler = (expenseData) => {
+    console.log(expenseData);
+  };
+
   return (
     <div>
+      <NewExpense onAddExpenseHandler={addExpenseHandler} />
       <Expenses expenses={expenses} />
     </div>
   );
