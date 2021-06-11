@@ -1,6 +1,10 @@
+const webpack = require("webpack");
 const HTMLWebpackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+
 const mode = "development";
+
+const ASSET_PATH = process.env.ASSET_PATH || "/";
 
 module.exports = {
   mode: mode,
@@ -31,18 +35,39 @@ module.exports = {
         ],
       },
       {
-        test: /\.scss$/,
+        test: /\.s[ac]ss$/i,
         use: [
+          process.env.NODE_ENV !== "production"
+            ? "style-loader"
+            : MiniCssExtractPlugin.loader,
+          // Creates `style` nodes from JS strings
           "style-loader",
+          // Translates CSS into CommonJS
+          "css-loader",
+          // Compiles Sass to CSS
+          "sass-loader",
           {
-            loader: "css-loader",
+            loader: "sass-loader",
             options: {
-              modules: {
-                localIdentName: "[path][name]__[local]--[hash:base64:5]",
-              },
+              // Prefer `dart-sass`
+              implementation: require("sass"),
+              sourceMap: true,
             },
           },
-          "sass-loader",
+        ],
+      },
+      {
+        test: /\.svg$/,
+        use: [
+          {
+            loader: "babel-loader",
+          },
+          {
+            loader: "react-svg-loader",
+            options: {
+              jsx: true, // true outputs JSX tags
+            },
+          },
         ],
       },
     ],
@@ -62,10 +87,18 @@ module.exports = {
       chunkFilename: "[id].css",
       ignoreOrder: false, // Enable to remove warnings about conflicting order
     }),
+    new webpack.DefinePlugin({
+      "process.env.ASSET_PATH": JSON.stringify(ASSET_PATH),
+    }),
   ],
   devtool: "inline-source-map",
   devServer: {
     historyApiFallback: true,
     port: 3000,
+  },
+  output: {
+    filename: "[hash].bundle.js",
+    //path: commonPaths.outputPath,
+    publicPath: "/", // Notice this line
   },
 };

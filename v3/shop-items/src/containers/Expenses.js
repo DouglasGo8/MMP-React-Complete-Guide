@@ -30,16 +30,20 @@ const expenses = ({ expenses }) => {
           selectedYear={year}
           onFilterChangeHandler={filterChangedHandler}
         />
-        {filteredExpenses.map((exp) => {
-          return (
-            <ExpenseItem
-              key={exp.id}
-              title={exp.title}
-              amount={exp.amount}
-              date={exp.date}
-            />
-          );
-        })}
+        {filteredExpenses.length === 0 && (
+          <p className="expenses-list__fallback">No expenses found</p>
+        )}
+        {filteredExpenses.length > 0 &&
+          filteredExpenses.map((exp) => {
+            return (
+              <ExpenseItem
+                key={exp.id}
+                title={exp.title}
+                amount={exp.amount}
+                date={exp.date}
+              />
+            );
+          })}
       </Card>
     </div>
   );
