@@ -68,9 +68,4 @@ module.exports = {
     historyApiFallback: true,
     port: 3000,
   },
-  output: {
-    filename: "[hash].bundle.js",
-    //path: commonPaths.outputPath,
-    publicPath: "/", // Notice this line
-  },
 };

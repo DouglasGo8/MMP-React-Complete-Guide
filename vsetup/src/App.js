@@ -2,7 +2,7 @@ import React from "react";
 
 import "./App.css";
 
-const app = () => {
+const App = () => {
   return (
     <div>
       <hr />
@@ -12,4 +12,4 @@ const app = () => {
   );
 };
 
-export default app;
+export default App;
