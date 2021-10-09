@@ -7,8 +7,8 @@ import "./Modal..css";
  * @param {*} props
  * @returns
  */
-const Backdrop = () => {
-  return <div className="backdrop" />;
+const Backdrop = (props) => {
+  return <div className="backdrop" onClick={props.onClose} />;
 };
 
 /**
@@ -31,10 +31,10 @@ const portalElement = document.getElementById("overlays");
  *
  * @param {*} props
  */
-const modal = (props) => {
+const Modal = (props) => {
   return (
     <Fragment>
-      {createPortal(<Backdrop />, portalElement)}
+      {createPortal(<Backdrop onClose={props.onClose} />, portalElement)}
       {createPortal(
         <ModalOverlay>{props.children}</ModalOverlay>,
         portalElement
@@ -43,4 +43,4 @@ const modal = (props) => {
   );
 };
 
-export default modal;
+export default Modal;
