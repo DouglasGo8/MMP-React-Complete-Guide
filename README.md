@@ -57,7 +57,7 @@ npm i --save-dev copy-webpack-plugin html-webpack-plugin mini-css-extract-plugin
 
 npm i --save-dev webpack webpack-cli webpack-dev-server
 
-npm i redux redux-logger react-redux
+npm i redux-logger react-redux @reduxjs/toolkit
 
 npm i react react-dom
 
@@ -73,3 +73,7 @@ db.getCollection("IngredientsCollection").insertOne({
   cheese: 0,
 });
 ```
+
+== Redux tips
+
+* Reducer must be pure, side-effect free and synchronous functions
