@@ -4,13 +4,13 @@ const uiSlice = createSlice({
   name: "ui",
   initialState: { cartIsVisible: false },
   reducers: {
-      toggle(state) { // redux actions
-          state.cartIsVisible = !state.cartIsVisible;
-      }
-  }
+    toggle(state) {
+      // redux actions
+      state.cartIsVisible = !state.cartIsVisible;
+    },
+  },
 });
 
 export const uiActions = uiSlice.actions;
-
 
 export default uiSlice;
