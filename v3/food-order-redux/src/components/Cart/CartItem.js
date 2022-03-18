@@ -1,4 +1,4 @@
-import "./CartItem.css";
+import classes from "./CartItem.module.css";
 
 /**
  *
@@ -7,20 +7,21 @@ import "./CartItem.css";
  */
 const CartItem = (props) => {
   const { title, quantity, total, price } = props.item;
+
   return (
-    <li className="item">
+    <li className={classes.item}>
       <header>
         <h3>{title}</h3>
-        <div className="price">
+        <div className={classes.price}>
           ${total.toFixed(2)}{" "}
-          <span className="itemprice">(${price.toFixed(2)}/item)</span>
+          <span className={classes.itemprice}>(${price.toFixed(2)}/item)</span>
         </div>
       </header>
-      <div className="details">
-        <div className="quantity">
+      <div className={classes.details}>
+        <div className={classes.quantity}>
           x <span>{quantity}</span>
         </div>
-        <div className="actions">
+        <div className={classes.actions}>
           <button>-</button>
           <button>+</button>
         </div>

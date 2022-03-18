@@ -1,15 +1,16 @@
 import CartButton from "../Cart/CartButton";
 
-import "./MainHeader.css";
+import classes from "./MainHeader.module.css";
 
 /**
  *
+ * @param {*} props
  * @returns
  */
-const MainHeader = () => {
+const MainHeader = (props) => {
   return (
-    <header className="header">
-      <h1>Redux Cart</h1>
+    <header className={classes.header}>
+      <h1>Redux Cart Shop</h1>
       <nav>
         <ul>
           <li>
