@@ -1,4 +1,4 @@
-const {createStore} = require("redux");
+const { createStore } = require("redux");
 
 /**
  * Inputs Old state + Dispatched Action -> Output new State Object
@@ -18,12 +18,12 @@ const store = createStore(countReducer); // Mandatory register
 
 console.log(store.getState());
 
-const counterSubscriber = () => {
+/*const counterSubscriber = () => {
   const latestState = store.getState(); // get last state snapshot
   console.log(latestState);
-};
+};*/
 
-store.subscribe(counterSubscriber);
+/*store.subscribe(counterSubscriber);
 
 store.dispatch({ type: "add" });
-store.dispatch({ type: "remove" });
+store.dispatch({ type: "remove" });*/

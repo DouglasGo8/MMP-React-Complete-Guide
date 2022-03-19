@@ -1,8 +1,6 @@
-# React - The Complete Guide (incl Hooks, React Router, Redux)
+= React - The Complete Guide (incl Hooks, React Router, Redux)
 
----
-
-## What is React
+== What is React
 
 - A JavaScript library for building user interfaces - [React Official Website](https://reactjs.org)
 - A client-side JavaScript library
@@ -10,13 +8,15 @@
 - Declarative, component-focused approach
 - SPA/MPA Applications ![View](assets/images/spa.png)
 
-## BurgerBuilder-eclipse-VertX
+== BurgerBuilder-eclipse-VertX
 
 Add instructions for project developers here.
 
-## Order Payload
+== Order Payload
 
-```json
+
+[source,json]
+----
 {
   "orderId": "123",
   "orderDate": "2019-08-06T16:22:33",
@@ -35,12 +35,12 @@ Add instructions for project developers here.
     "meat": 1
   }
 }
-```
+----
 
-## React v17 Complete Setup
+== React v17 Complete Setup
 
-```shell
-
+[source,bash]
+----
 npm i --save-dev @babel/cli @babel/core @babel/plugin-proposal-class-properties \
   @babel/plugin-proposal-export-default-from @babel/plugin-transform-runtime \
   @babel/preset-env @babel/preset-react babel-loader babel-plugin-module-resolver
@@ -60,20 +60,65 @@ npm i --save-dev webpack webpack-cli webpack-dev-server
 npm i redux-logger react-redux @reduxjs/toolkit
 
 npm i react react-dom
+----
 
-```
 
-## Insert Ingredients
+== Insert Ingredients
 
-```javascript
+[source,javascript]
+----
 db.getCollection("IngredientsCollection").insertOne({
   salad: 0,
   meat: 0,
   bacon: 0,
   cheese: 0,
 });
-```
+----
 
-== Redux tips
+== Redux Core Concepts
 
-* Reducer must be pure, side-effect free and synchronous functions
+. Reducer must be pure, side-effect free and synchronous functions
+. We have just one store for the enteire application, never more than one
+. Never manipulate store data in a component, componentss just subscribe the data
+. Reducer functions will be responsable for mutates (=changes) Store data (state)
+. Components fire actions to reducer 
+
+[source,javascript]
+----
+const { createStore } = require('redux');
+
+
+const calculatorReducer = (state = { result: 0 }, action) => {
+  switch (action.type) {
+
+    case "sum":
+      state.result = action.payload.a + action.payload.b;
+      return {
+        result: state.result
+      }
+
+    case "subtract":
+      state.result = action.payload.a - action.payload.b;
+      return {
+        result: state.result
+      }
+    default: return state;
+  }
+}
+
+
+const store = createStore(calculatorReducer);
+
+console.log(store.getState());
+
+
+const calculatorSubscriber = () => {
+  console.log(store.getState());
+}
+
+store.subscribe(calculatorSubscriber);
+
+store.dispatch({ type: 'sum', payload: { a: 8, b: 2} });
+store.dispatch({ type: 'subtract', payload: { a: 10, b: 2} });
+
+----
