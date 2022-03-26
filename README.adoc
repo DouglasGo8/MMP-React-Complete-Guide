@@ -57,6 +57,8 @@ npm i --save-dev copy-webpack-plugin html-webpack-plugin mini-css-extract-plugin
 
 npm i --save-dev webpack webpack-cli webpack-dev-server
 
+npm i redux react-redux
+
 npm i redux-logger react-redux @reduxjs/toolkit
 
 npm i react react-dom

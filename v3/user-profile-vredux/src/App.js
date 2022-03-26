@@ -1,12 +1,10 @@
 import "./App.css";
 
+import Counter from "./components/Counter";
+
 const App = () => {
   return (
-    <div>
-      <hr />
-      Content
-      <hr />
-    </div>
+    <Counter />
   );
 };
 
