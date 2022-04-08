@@ -1,5 +1,7 @@
 import { createStore } from "redux";
 
+import { TOGGLE, INCREASE, INCREMENT, DECREMENT } from "./labels";
+
 const initialState = { counter: 0, showCounterField: true };
 
 /**
@@ -9,24 +11,25 @@ const initialState = { counter: 0, showCounterField: true };
  */
 const counterReducer = (state = initialState, action) => {
   switch (action.type) {
-    case "increment":
+    case INCREMENT:
       return {
         counter: state.counter + 1,
         showCounterField: state.showCounterField,
       };
-    case "increase":
+
+    case INCREASE:
       return {
         counter: state.counter + action.value,
         showCounterField: state.showCounterField,
       };
 
-    case "decrement":
+    case DECREMENT:
       return {
         counter: state.counter === 0 ? 0 : state.counter - 1,
         showCounterField: state.showCounterField,
       };
 
-    case "toggle":
+    case TOGGLE:
       return {
         counter: state.counter,
         showCounterField: !state.showCounterField,
