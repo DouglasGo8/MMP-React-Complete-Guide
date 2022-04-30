@@ -87,6 +87,14 @@ db.getCollection("IngredientsCollection").insertOne({
 . Never manipulate store data in a component, componentss just subscribe the data
 . Reducer functions will be responsable for mutates (=changes) Store data (state)
 . Components fire actions to reducer 
+. Never manipulate sync/async actions (side effects) inside reducers #_NEVER EVER_#
+. Synchronous, side-effect free code (i.e data transformation) do it in Reducers, avoinding Action Creator or Components
+. Asynchrounous or code side-effects, choose Action Creators or Components and never use Reducers
+
+== Redux Thunk Core Concepts
+
+. A function that delays an action until later, RxJs lib (Reactive) have similar concepts
+
 
 [source,javascript]
 ----
@@ -127,3 +135,4 @@ store.dispatch({ type: 'sum', payload: { a: 8, b: 2} });
 store.dispatch({ type: 'subtract', payload: { a: 10, b: 2} });
 
 ----
+
