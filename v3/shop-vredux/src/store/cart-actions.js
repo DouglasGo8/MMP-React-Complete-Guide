@@ -2,7 +2,7 @@ import { uiActions } from "./ui-slice";
 
 import { cartActions } from "./cart-slice";
 
-const URL = "https://react-http-558fc-default-rtdb.firebaseio.com/cart.json";
+const URL = "{{FIRE_BASE_URL}}";
 
 /**
  * Redux Thunk Concept
