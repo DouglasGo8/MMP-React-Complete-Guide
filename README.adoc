@@ -64,6 +64,8 @@ npm i redux-logger react-redux @reduxjs/toolkit
 
 npm i react react-dom
 
+npm i react-router-dom
+
 npm i react@^17.0.2 react-dom@^17.0.2
 ----
 
