@@ -138,3 +138,10 @@ store.dispatch({ type: 'subtract', payload: { a: 10, b: 2} });
 
 ----
 
+
+
+== Auth Firebase project
+[source, bash]
+----
+https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=[API_KEY]
+----
