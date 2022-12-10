@@ -3,5 +3,10 @@
  */
 const AuthContext = React.createContext({
   token: '',
-  isLoggedIn: false
+  isLoggedIn: false,
+  login: (token) => {},
+  logout: () =>{}
 });
+
+
+ const AuthContextProvider = () => {}

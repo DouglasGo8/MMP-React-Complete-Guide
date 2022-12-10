@@ -145,3 +145,12 @@ store.dispatch({ type: 'subtract', payload: { a: 10, b: 2} });
 ----
 https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=[API_KEY]
 ----
+
+
+== Next.js App
+
+[source,bash]
+----
+npx create-next-app
+# prompt further info
+----
