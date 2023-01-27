@@ -3,13 +3,13 @@
   height: 5rem;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: space-around;
   background-color: #77002e;
   padding: 0 10%;
 }
 
 .logo {
-  font-size: 2rem;
+  font-size: 0.98rem;
   color: white;
   font-weight: bold;
 }
@@ -28,7 +28,7 @@
 
 .header a {
   text-decoration: none;
-  font-size: 1.5rem;
+  font-size: 0.98rem;
   color: #fcb8d2;
 }
 
